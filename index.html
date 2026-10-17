@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form | HTML, CSS and JavaScript Project</title>
+    <meta name="description" content="A responsive student registration form with live validation for name, email, phone, date of birth, course and more. Demo only, built by Shankar Saini.">
+    <meta name="author" content="Shankar Saini">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="canonical" href="https://shankar-saini.github.io/registration-form/">
+    <link rel="alternate" hreflang="en-in" href="https://shankar-saini.github.io/registration-form/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shankar Saini | Projects">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:url" content="https://shankar-saini.github.io/registration-form/">
+    <meta property="og:title" content="Student Registration Form | HTML, CSS and JavaScript Project">
+    <meta property="og:description" content="A responsive student registration form with live validation for name, email, phone, date of birth, course and more. Demo only, built by Shankar Saini.">
+    <meta property="og:image" content="https://shankar-saini.github.io/shankar-saini-seo-web-developer.png">
+    <meta property="og:image:alt" content="Shankar Saini, SEO specialist and web developer from Jaipur">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Student Registration Form | HTML, CSS and JavaScript Project">
+    <meta name="twitter:description" content="A responsive student registration form with live validation for name, email, phone, date of birth, course and more. Demo only, built by Shankar Saini.">
+    <meta name="twitter:image" content="https://shankar-saini.github.io/shankar-saini-seo-web-developer.png">
+
+    <link rel="stylesheet" href="registration.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {"@type": "WebPage", "@id": "https://shankar-saini.github.io/registration-form/#page", "url": "https://shankar-saini.github.io/registration-form/", "name": "Student Registration Form | HTML, CSS and JavaScript Project", "description": "A responsive student registration form with live validation for name, email, phone, date of birth, course and more. Demo only, built by Shankar Saini.", "inLanguage": "en-IN",
+          "isPartOf": {"@id": "https://shankar-saini.github.io/#website"},
+          "author": {"@id": "https://shankar-saini.github.io/#person"}},
+        {"@type": "BreadcrumbList", "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://shankar-saini.github.io/"},
+          {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://shankar-saini.github.io/projects"},
+          {"@type": "ListItem", "position": 3, "name": "Student Registration Form", "item": "https://shankar-saini.github.io/registration-form/"}]},
+        {"@type": "Person", "@id": "https://shankar-saini.github.io/#person", "name": "Shankar Saini", "url": "https://shankar-saini.github.io/"}
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <main class="page">
+
+        <section class="card" aria-labelledby="form-title">
+            <h1 id="form-title">Student Registration Form</h1>
+            <p class="sub">Fill in the details below. Fields marked <span class="req">*</span> are required. This is a demo, so nothing is sent or stored.</p>
+
+            <form id="reg-form" novalidate>
+                <div class="grid">
+                <div class="field" data-field="fullname">
+                    <label for="fullname">Full name <span class="req">*</span></label>
+                    <input type="text" id="fullname" name="fullname" autocomplete="name" placeholder="e.g. Riya Sharma" aria-describedby="fullname-error">
+                    <p class="error" id="fullname-error" role="alert"></p>
+                </div>
+                <div class="field" data-field="email">
+                    <label for="email">Email address <span class="req">*</span></label>
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-error">
+                    <p class="error" id="email-error" role="alert"></p>
+                </div>
+                <div class="field" data-field="phone">
+                    <label for="phone">Mobile number <span class="req">*</span></label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel-national" inputmode="numeric" maxlength="10" placeholder="10-digit number" aria-describedby="phone-error">
+                    <p class="error" id="phone-error" role="alert"></p>
+                </div>
+                <div class="field" data-field="dob">
+                    <label for="dob">Date of birth <span class="req">*</span></label>
+                    <input type="date" id="dob" name="dob" aria-describedby="dob-error">
+                    <p class="error" id="dob-error" role="alert"></p>
+                </div>
+                <div class="field" data-field="course">
+                    <label for="course">Course <span class="req">*</span></label>
+                    <select id="course" name="course" aria-describedby="course-error">
+                        <option value="">Select a course</option>
+                        <option>BCA</option>
+                        <option>BBA</option>
+                        <option>B.Com</option>
+                        <option>B.Sc (IT)</option>
+                        <option>MCA</option>
+                        <option>Diploma in Web Development</option>
+                    </select>
+                    <p class="error" id="course-error" role="alert"></p>
+                </div>
+                <div class="field" data-field="percent">
+                    <label for="percent">Last exam percentage</label>
+                    <input type="number" id="percent" name="percent" min="0" max="100" step="0.1" placeholder="e.g. 78.5" aria-describedby="percent-error">
+                    <p class="error" id="percent-error" role="alert"></p>
+                </div>
+
+                </div>
+
+                <fieldset class="field" data-field="gender">
+                    <legend>Gender <span class="req">*</span></legend>
+                    <label class="opt"><input type="radio" name="gender" value="Female"> Female</label>
+                    <label class="opt"><input type="radio" name="gender" value="Male"> Male</label>
+                    <label class="opt"><input type="radio" name="gender" value="Other"> Other</label>
+                    <p class="error" id="gender-error" role="alert"></p>
+                </fieldset>
+
+                <div class="field" data-field="address">
+                    <label for="address">Address <span class="req">*</span></label>
+                    <textarea id="address" name="address" rows="3" maxlength="200" autocomplete="street-address" placeholder="House no., street, city, state" aria-describedby="address-error"></textarea>
+                    <p class="error" id="address-error" role="alert"></p>
+                </div>
+
+                <div class="field" data-field="terms">
+                    <label class="opt"><input type="checkbox" id="terms" name="terms" aria-describedby="terms-error"> I confirm that the details above are correct. <span class="req">*</span></label>
+                    <p class="error" id="terms-error" role="alert"></p>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn submit">Register</button>
+                    <button type="reset" class="btn reset">Reset</button>
+                </div>
+            </form>
+
+            <div class="summary" id="summary" hidden tabindex="-1" role="status">
+                <h2>Registration received (demo)</h2>
+                <p>Thank you, <strong id="s-name"></strong>! Here is what you entered:</p>
+                <dl id="s-list"></dl>
+                <button type="button" class="btn reset" id="again">Register another student</button>
+            </div>
+        </section>
+
+        <!-- More projects -->
+        <section class="more" aria-labelledby="more-title">
+            <h2 id="more-title">More Projects by Shankar Saini</h2>
+            <p>
+                This is a mini practice website made by
+                <a href="https://shankar-saini.github.io/" rel="author">Shankar Saini</a>.
+                Have a look at my other HTML, CSS and JavaScript projects too:
+            </p>
+            <p class="more-links">
+                <a href="https://shankar-saini.github.io/todo-app/">To-Do List app</a>
+                <a href="https://shankar-saini.github.io/calculator/">Calculator</a>
+                <a href="https://shankar-saini.github.io/login-page/">Login page</a>
+                <a href="https://shankar-saini.github.io/travel-time/">Travel Time website</a>
+                <a href="https://shankar-saini.github.io/restaurant-website/">Restaurant website</a>
+                <a href="https://shankar-saini.github.io/projects">See all my projects</a>
+                <a href="https://github.com/shankar-saini/registration-form" rel="noopener">View the code on GitHub</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Shankar Saini · Practice project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
